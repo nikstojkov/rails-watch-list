@@ -1,0 +1,29 @@
+<div class="container">
+   <h1><%= @list.name %></h1>
+   <div class="card-show-title">
+      <h2>Movies</h2>
+   </div>
+   <div class="row cards-movie">
+      <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-6-sm">
+         <div class="card-movie">
+            <h5><%= bookmark.movie.title %></h5>
+            <%# <p><%= %>
+         </div>
+         <% end %>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-12">
+      <hr>
+      <div class="form">
+         <h3>Add a new movie</h3>
+         <%= simple_form_for [ @list, @bookmark ] do |f| %>
+         <%= f.input :comment, placeholder: 'Add your comment'%>
+         <%= f.association :movie %>
+         <%= f.submit 'Add movie', class: "btn btn-primary"%>
+         <% end %>
+      </div>
+   </div>
+</div>

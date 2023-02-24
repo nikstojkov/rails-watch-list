@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card-product">
+    <div class="lists">
+      <% @lists.each do |list| %>
+      <div class="card-product">
+          <span class="list-title">
+            <%= link_to list.name, list_path(list), class:"btn-click"%>
+         </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width">
+</div>
